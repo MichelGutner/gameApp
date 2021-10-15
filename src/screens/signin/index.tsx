@@ -12,7 +12,8 @@ import { ButtonIcon } from '../../components/buttonicon/index';
 import IllustrationImg from '../../assets/illustration.png';
 import { styles } from './styles';
 
-export default function SignIn() {
+export default function SignIn({ navigation }) {
+
   return (
 
     <View style={styles.container}>
@@ -41,7 +42,7 @@ export default function SignIn() {
           favoritos com seus Amigos.
         </Text>
 
-        <ButtonIcon title="Entrar com Discord" />
+        <ButtonIcon title = {"Entrar com Discord"} navigation = {navigation}/>
       </View>
     </View>
   );
