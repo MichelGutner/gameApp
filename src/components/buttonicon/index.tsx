@@ -7,25 +7,21 @@ Text,
 View,
 Image,
 TouchableOpacity,
-Alert
+TouchableOpacityProps,
 } from "react-native";
 
 import DiscordImg from '../../assets/discord.png';
 import { styles } from './styles';
 
-type Props = {
+type Props = TouchableOpacityProps & {
     title?: String;
-    navigation?: any;
 }
 
-export function ButtonIcon({title, navigation}: Props) {
-    console.log(title, navigation)
+export function ButtonIcon({title, ...rest}: Props) {
     return (
         <TouchableOpacity
          style={styles.container}
-         onPress = {() =>{
-             navigation.navigate('Home')
-         }}
+         {...rest }
          >
             <View style={styles.iconWrapper}>
                 <Image source={DiscordImg} style={styles.icon} />
